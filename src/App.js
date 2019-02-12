@@ -7,9 +7,15 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-            <h2>Test App</h2>
-            <button>1</button>
+          <h2>Test App</h2>
+            <div>
+              <button>1</button>
+              <button>2</button>
+            </div>
+            <div>
+              <button>3</button>
+              <button>4</button>
+            </div>
         </header>
       </div>
     );
