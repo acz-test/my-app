@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/my-app/static/media/boldandbrash.141513de.mp3"
   },
   {
-    "revision": "b816acbad8b82440eb58",
-    "url": "/my-app/static/css/main.3eb84c34.chunk.css"
+    "revision": "edba1ca218fd51c14c7e",
+    "url": "/my-app/static/css/main.cbda4027.chunk.css"
   },
   {
     "revision": "caff8f4450a1e5b1c09b",
@@ -36,8 +36,8 @@ self.__precacheManifest = [
     "url": "/my-app/static/media/imagination.383a7eaf.mp3"
   },
   {
-    "revision": "b816acbad8b82440eb58",
-    "url": "/my-app/static/js/main.b816acba.chunk.js"
+    "revision": "edba1ca218fd51c14c7e",
+    "url": "/my-app/static/js/main.edba1ca2.chunk.js"
   },
   {
     "revision": "4ae5a43b8893db747e06b2d9b611e84e",
@@ -72,7 +72,7 @@ self.__precacheManifest = [
     "url": "/my-app/static/media/rickroll.ee36d061.mp3"
   },
   {
-    "revision": "98c864c7f57759caec4d1654fd0d9d9a",
+    "revision": "f59c7c88dc8a8d58c5c17e2650402558",
     "url": "/my-app/index.html"
   }
 ];
