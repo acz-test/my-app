@@ -16,7 +16,7 @@ class App extends Component {
     }
     this.addSound = this.addSound.bind(this);
     this.play = this.play.bind(this);
-    this.set = this.reset.bind(this);
+    this.reset = this.reset.bind(this);
   }
 
   addSound(event) {
@@ -37,7 +37,7 @@ class App extends Component {
     var arr = this.state.sequence.slice();
     const getFile = this.getFile;
     if (length > 0) {
-      var audio = new Audio(getFile(this.state.sequence[0]));
+      var audio = new Audio(getFile(arr[0]));
       audio.play();
 
       audio.onended = function() {
@@ -86,6 +86,7 @@ class App extends Component {
               </div>
               <div>
                 <button id="play" onClick={this.play}>Play</button>
+                <button id="reset" onClick={this.reset}>Reset</button>
               </div>
             </div>
         </header>
