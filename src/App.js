@@ -16,6 +16,8 @@ let uglybarnacle = require('./mp3/uglybarnacle.mp3');
 let dirtydan = require('./mp3/dirtydan.mp3');
 let rickroll = require('./mp3/rickroll.mp3');
 
+var audio = new Audio();
+
 class App extends Component {
 
   constructor(props) {
@@ -27,6 +29,7 @@ class App extends Component {
     this.play = this.play.bind(this);
     this.reset = this.reset.bind(this);
     this.removeSound = this.removeSound.bind(this);
+    this.stop = this.stop.bind(this);
   }
 
   addSound(event) {
@@ -47,7 +50,8 @@ class App extends Component {
     var arr = this.state.sequence.slice();
     const getFile = this.getFile;
     if (length > 0) {
-      var audio = new Audio(getFile(arr[0]));
+      audio.src = getFile(arr[0]);
+      //var audio = new Audio(getFile(arr[0]));
       audio.play();
 
       audio.onended = function() {
@@ -58,6 +62,8 @@ class App extends Component {
           i++;
         }
       };
+    } else if (length == 0) {
+      audio.pause();
     }
   }
 
@@ -102,6 +108,11 @@ class App extends Component {
     });
   }
 
+  stop() {
+    console.log("a");
+    audio.pause();
+  }
+
   render() {
     return (
       <div className="App">
@@ -140,6 +151,9 @@ class App extends Component {
               <div>
                 <button id="play" className="bottom" onClick={this.play}>Play</button>
                 <button id="reset" className="bottom" onClick={this.reset}>Reset</button>
+              </div>
+              <div>
+                <button id="stop" className="bottom" onClick={this.stop}>Stop</button>
               </div>
             </div>
         </header>
