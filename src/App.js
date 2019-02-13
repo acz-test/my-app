@@ -17,6 +17,7 @@ class App extends Component {
     this.addSound = this.addSound.bind(this);
     this.play = this.play.bind(this);
     this.reset = this.reset.bind(this);
+    this.removeSound = this.removeSound.bind(this);
   }
 
   addSound(event) {
@@ -66,27 +67,36 @@ class App extends Component {
     }
   }
 
+  removeSound(event) {
+    var index = parseInt(event.target.id.slice(4));
+    var seq = this.state.sequence.slice();
+    this.setState({
+      sequence: seq.slice(0,index).concat(seq.slice(index+1))
+    });
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <h2>Spongebob Soundboard</h2>
             <div>
-              <button id="1" onClick={this.addSound}>1</button>
-              <button id="2" onClick={this.addSound}>2</button>
+              <button id="1" className="board" onClick={this.addSound}>1</button>
+              <button id="2" className="board" onClick={this.addSound}>2</button>
             </div>
             <div>
-              <button id="3" onClick={this.addSound}>3</button>
-              <button id="4" onClick={this.addSound}>4</button>
+              <button id="3" className="board" onClick={this.addSound}>3</button>
+              <button id="4" className="board" onClick={this.addSound}>4</button>
               <div id="sequence">{this.state.sequence.map((i,j) => {
                 return (
-                  i + " "
+                  <button className="list" id={"list" + j} key={j} onClick={this.removeSound}>{i}</button>
+                  //i + " "
                 )
               })}
               </div>
               <div>
-                <button id="play" onClick={this.play}>Play</button>
-                <button id="reset" onClick={this.reset}>Reset</button>
+                <button id="play" className="bottom" onClick={this.play}>Play</button>
+                <button id="reset" className="bottom" onClick={this.reset}>Reset</button>
               </div>
             </div>
         </header>
