@@ -70,8 +70,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h2>Test App</h2>
-            <source src="mp3/mayonnaise.mp3" type="audio/mpeg" />
+          <h2>Spongebob Soundboard</h2>
             <div>
               <button id="1" onClick={this.addSound}>1</button>
               <button id="2" onClick={this.addSound}>2</button>
